@@ -3,9 +3,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import DirectorContainer from "./pages/DirectorContainer";
 import DirectorCard from "./pages/DirectorCard";
-import MovieCard from "./pages/MovieCard";
 import DirectorForm from "./pages/DirectorForm";
 import MovieForm from "./pages/MovieForm";
+import MovieCard from "./pages/MovieCard";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
 
         {/* Directors parent route */}
         <Route path="/directors" element={<DirectorContainer />}>
-          <Route index element={<DirectorForm />} />
+          <Route index element={<DirectorContainer />} /> {/* shows directors list */}
           <Route path="new" element={<DirectorForm />} />
           <Route path=":id" element={<DirectorCard />}>
             <Route path="movies/new" element={<MovieForm />} />
